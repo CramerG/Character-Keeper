@@ -19,7 +19,7 @@ module.exports.findAllUsers = (req, res) => {
 module.exports.login = async(req, res) => {
     var user;
     try {
-        user = await User.findOne( { email: req.body.email } );
+        user = await User.findOne( { username: req.body.username } );
         if( user === null ) {
             return res.sendStatus(400);
         }
