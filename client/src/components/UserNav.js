@@ -7,7 +7,7 @@ const UserNav = props => {
     return(
         <div className="usernav">
             <Link to="/signup" className="linkText">Sign Up</Link>
-            <Link to="" className="linkText">Log In</Link>
+            <Link to="/signin" className="linkText">Log In</Link>
         </div>
     );
 }

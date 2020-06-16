@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Main from './views/Main';
 import SignUp from './views/SignUp';
+import SignIn from './views/SignIn';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Main path="/"/>
         <SignUp path="/signup"/>
+        <SignIn path="/signin"/>
       </Router>
     </div>
   );
