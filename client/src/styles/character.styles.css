@@ -1,0 +1,52 @@
+.statL{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+    float: left;
+}
+.statR{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+    float: right; 
+}
+.statW{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+    float: left;
+}
+.clearBoth{
+    clear: both;
+}
+.fieldWrapper{
+    width: 40%;
+    margin: auto;
+}
+.fieldWrapperW{
+    width: 50%;
+    margin: auto;
+}
+.interiorLinkText{
+    font-family: 'Cinzel', serif;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14pt;
+    color: black;
+    font-weight: 700;
+    background-color: lightgray;
+    margin-right: 10px;
+    border-radius: .5em;
+}
+.infoLine{
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    float: left;
+    margin: auto;
+    padding-right: 10px;
+}
+.charSheet{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}

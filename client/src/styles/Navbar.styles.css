@@ -3,7 +3,7 @@
 .navbar{
     min-height: 50px;
     width: 100%;
-    background-color: lightslategrey;
+    background-color: lightgray;
 }
 
 .title{
@@ -28,6 +28,7 @@
     text-decoration: none;
     font-size: 14pt;
     color: black;
+    font-weight: 700;
 }
 .linkText:visited{
     color: black;
