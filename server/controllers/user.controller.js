@@ -50,3 +50,9 @@ module.exports.logout = (req, res) => {
     res.clearCookie("usertoken");
     res.sendStatus(200);
 }
+
+module.exports.deleteUser = (req, res) => {
+    User.findByIdAndDelete({_id: req.body.id})
+        .then(deletedUser => res.json({user: deletedUser}))
+        .catch(err => res.json({error: err}));
+}

@@ -5,4 +5,5 @@ module.exports = app => {
     app.post("/api/users/login", UserController.login);
     app.get("/api/users", UserController.findAllUsers);
     app.get("/api/users/logout", UserController.logout);
+    app.post("/api/deleteUser", UserController.deleteUser);
 }
