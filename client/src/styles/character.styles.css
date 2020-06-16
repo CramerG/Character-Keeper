@@ -1,7 +1,6 @@
 .statL{
     margin: auto;
     width: 50%;
-    margin-bottom: 10px;
     float: left;
 }
 .statR{
@@ -13,19 +12,20 @@
 .statW{
     margin: auto;
     width: 50%;
-    margin-bottom: 10px;
     float: left;
 }
 .clearBoth{
     clear: both;
 }
 .fieldWrapper{
-    width: 40%;
+    width: 80%;
     margin: auto;
+    margin-bottom: 10px;
 }
 .fieldWrapperW{
-    width: 50%;
+    width: 90%;
     margin: auto;
+    margin-bottom: 10px;
 }
 .interiorLinkText{
     font-family: 'Cinzel', serif;
@@ -37,6 +37,7 @@
     background-color: lightgray;
     margin-right: 10px;
     border-radius: .5em;
+    box-shadow: 0 2px 6px 0 lightslategray;
 }
 .infoLine{
     font-family: 'Cinzel', serif;
@@ -49,4 +50,16 @@
     width: 50%;
     margin: auto;
     margin-bottom: 20px;
+    padding: 5px;
+    background-color: lightgray;
+    border-radius: 0.25em;
+    box-shadow: 0 4px 8px 0 lightslategray;
+}
+.charForm{
+    padding: 20px;
+    width:50%;
+    margin: auto;
+    background-color: lightgray;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px 0 lightslategray;
 }

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
 
 .navbar{
-    min-height: 50px;
+    min-height: 55px;
     width: 100%;
-    background-color: lightgray;
+    background-color: lightslategray;
 }
 
 .title{
@@ -12,23 +12,30 @@
     float: left;
     width: 30%;
     font-weight: 700;
+    padding: 5px;
+    text-shadow: 2px 2px 5px lightgrey;
 }
 
 .links{
     top: 50%;
     float: right;
-    width: 70%;
+    width: 65%;
     margin-top: 10px;
 }
 
 .linkText{
     font-family: 'Cinzel', serif;
     float: left;
-    padding-left: 25px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-decoration: none;
     font-size: 14pt;
     color: black;
     font-weight: 700;
+    background-color: lightgray;
+    border-radius: 0.5em;
+    box-shadow: -1px 2px 3px 0 black;
 }
 .linkText:visited{
     color: black;

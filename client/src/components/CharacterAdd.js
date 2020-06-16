@@ -42,11 +42,12 @@ const CharacterAdd = props => {
     return(
         <div>
             <div className="sectionHeader">Add New Character</div>
-            <form onSubmit={onSubmitHandler}>
-                <div className="field">
+            <form onSubmit={onSubmitHandler} className="charForm">
+                <div className="fieldWrapperW">
                     <label className="label">Name</label>
                     <input type="text" onChange={(e) => {setName(e.target.value)}}/>
                 </div>
+                <div className="clearBoth"/>
                 <div className="fieldWrapperW">
                     <div className="statW">
                         <label className="label">Class</label>
