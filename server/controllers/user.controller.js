@@ -5,7 +5,13 @@ const jwt = require('jsonwebtoken');
 module.exports.register = (req, res) => {
     User.create(req.body)
         .then(user => {
-            res.json({ msg: "success!", user: user });
+            const userToken = jwt.sign({
+                id: user._id
+            }, process.env.USERKEY);
+        
+            res
+                .cookie("usertoken", userToken, process.env.USERKEY, {httpOnly: true})
+                .json({msg: "Login success"});
         })
         .catch(err => res.json(err));
 };

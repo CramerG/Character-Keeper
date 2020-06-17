@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/SignUp.styles.css';
+import { navigate } from '@reach/router';
 
 const SignIn = props => {
     axios.defaults.withCredentials = true;
@@ -18,6 +19,7 @@ const SignIn = props => {
             .then(res => {
                 console.log("Login Success")
                 setError("");
+                navigate("/characters");
             })
             .catch(err => {
                 console.log(err)
@@ -43,7 +45,7 @@ const SignIn = props => {
                 </div>
                 <div className="field">
                     <label className="label">Password</label>
-                    <input type="text" onChange={(e) => {setPassword(e.target.value)}}/>
+                    <input type="password" onChange={(e) => {setPassword(e.target.value)}}/>
                 </div>
                 {showError()}
                 <input type="submit" value="Sign In"/>

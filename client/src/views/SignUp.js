@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/SignUp.styles.css';
+import { navigate } from '@reach/router';
 
 const SignUp = props => {
     const [username, setUsername] = useState();
@@ -21,33 +22,39 @@ const SignUp = props => {
             .then(res => {
                 console.log(res);
                 setErrors(res.data.errors);
+                if(res.data.msg == "Login success") {
+                    navigate("/characters");
+                }
             })
             .catch(err => console.log(err));
     }
 
     const emailTip = () => {
-        if (errors.email !== undefined) {
-            console.log("Email Error");
-            if(errors.email.kind === "required") {
-                return(
-                    <p className="formError">Email is required</p>
-                );
-            } else if (errors.email.kind === "unique") {
-                return(
-                    <p className="formError">This Email has already been registered</p>
-                )
-            } else if (errors.email.kind === "user defined") {
-                return(
-                    <p className="formError">Please enter a valid email address</p>
-                );
-            } else {
-                return(<div></div>);
+        if(errors !== undefined) {
+            if (errors.email !== undefined) {
+                console.log("Email Error");
+                if(errors.email.kind === "required") {
+                    return(
+                        <p className="formError">Email is required</p>
+                    );
+                } else if (errors.email.kind === "unique") {
+                    return(
+                        <p className="formError">This Email has already been registered</p>
+                    )
+                } else if (errors.email.kind === "user defined") {
+                    return(
+                        <p className="formError">Please enter a valid email address</p>
+                    );
+                } else {
+                    return(<div></div>);
+                }
             }
         }     
     }
 
     const usernameTip = () => {
-        if (errors.username !== undefined) {
+        if(errors !== undefined) {
+            if (errors.username !== undefined) {
             if (errors.username.kind === "required") {
                 return(
                     <p className="formError">Username is required</p>
@@ -57,24 +64,29 @@ const SignUp = props => {
                     <p className="formError">Username unavailable</p>
                 );
             }
+            }
         }
     }
 
     const passwordTip = () => {
-        if (errors.password !== undefined) {
-            if (errors.password.kind === "required") {
-                return(
-                    <p className="formError">A password is required</p>
+        if(errors !== undefined) {
+            if (errors.password !== undefined) {
+                if (errors.password.kind === "required") {
+                    return(
+                        <p className="formError">A password is required</p>
                 );
+                }
             }
         }
     }
 
     const confirmPasswordTip= () => {
-        if(errors.confirmPassword !== undefined) {
-            return(
-                <p className="formError">Passwords do not match</p>
-            );
+        if (errors !== undefined) {
+            if(errors.confirmPassword !== undefined) {
+                return(
+                    <p className="formError">Passwords do not match</p>
+                );
+            }
         }
     }
 

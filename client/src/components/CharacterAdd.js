@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/SignUp.styles.css';
 import '../styles/character.styles.css';
+import { navigate } from '@reach/router';
 
 const CharacterAdd = props => {
     axios.defaults.withCredentials = true;
@@ -35,7 +36,10 @@ const CharacterAdd = props => {
             thac0: thac0
         };
         axios.post('http://localhost:8000/api/bx', character)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res);
+                navigate("/characters");
+            })
             .catch(err => console.log(err));
     }
 
