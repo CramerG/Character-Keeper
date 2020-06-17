@@ -93,7 +93,7 @@ const SignUp = props => {
     return(
         <div className="body">
             <div className="sectionHeader">Sign Up</div>
-            <form onSubmit={onSubmitHandler}>
+            <form onSubmit={onSubmitHandler} className="signupForm">
                 <div className="field">
                     <label className="label">User Name</label>
                     <input type="text" onChange={(e) => setUsername(e.target.value)}/>

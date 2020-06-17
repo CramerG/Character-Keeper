@@ -38,7 +38,7 @@ const SignIn = props => {
     return(
         <div>
             <div className="sectionHeader">Sign In</div>
-            <form onSubmit={onSubmitHandler}>
+            <form onSubmit={onSubmitHandler} className="signupForm">
                 <div className="field">
                     <label className="label">Username</label>
                     <input type="text" onChange={(e) => {setUsername(e.target.value)}}/>
