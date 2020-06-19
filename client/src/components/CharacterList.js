@@ -9,7 +9,7 @@ const CharacterList = props => {
         axios.get('http://localhost:8000/api/bx')
             .then(res => setCharacters(res.data))
             .catch(err => console.log(err));
-    }, [characters]);
+    }, []);
 
     const showCharacters = () => {
         if (characters.length === 0) {
@@ -20,7 +20,7 @@ const CharacterList = props => {
             return(
                 characters.map((char, idx) => {
                     return(
-                        <div className="charSheet">
+                        <div className="charSheet" key={idx}>
                             <div className="infoLine">Name: {char.name}</div>
                             <div className="clearBoth"/>
                             <div className="infoLine">Race: {char.race}</div>

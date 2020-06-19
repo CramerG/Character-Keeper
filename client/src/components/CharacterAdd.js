@@ -18,6 +18,7 @@ const CharacterAdd = props => {
     const [cha, setCha] = useState();
     const [ac, setAC] = useState();
     const [thac0, setThac0] = useState();
+    const [error, setError] = useState([]);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -38,7 +39,12 @@ const CharacterAdd = props => {
         axios.post('http://localhost:8000/api/bx', character)
             .then(res => {
                 console.log(res);
-                navigate("/characters");
+                if(res.data.error === undefined) {
+                    navigate("/characters");
+                } else {
+                    setError(res.data.error.errors);
+                }
+
             })
             .catch(err => console.log(err));
     }
@@ -49,7 +55,7 @@ const CharacterAdd = props => {
             <form onSubmit={onSubmitHandler} className="charForm">
                 <div className="fieldWrapperW">
                     <label className="label">Name</label>
-                    <input type="text" onChange={(e) => {setName(e.target.value)}}/>
+                    <input type="text" required onChange={(e) => {setName(e.target.value)}}/>
                 </div>
                 <div className="clearBoth"/>
                 <div className="fieldWrapperW">
@@ -75,49 +81,49 @@ const CharacterAdd = props => {
                 </div>
                 <div className="field">
                     <label className="label">Level</label>
-                    <input type="number" min="1" max="20" onChange={(e) => {setLevel(e.target.value)}}/>
+                    <input type="number" min="1" max="20" required onChange={(e) => {setLevel(e.target.value)}}/>
                 </div>
                 <div className="fieldWrapper">
                     <div className="statL">
                         <label className="label">Strength</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setStr(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setStr(e.target.value)}}/>
                     </div>
                     <div className="statL">
                         <label className="label">Dexterity</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setDex(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setDex(e.target.value)}}/>
                     </div>
                     <div className="clearBoth"/>
                 </div>
                 <div className="fieldWrapper">
                     <div className="statL">
                         <label className="label">Constitution</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setCon(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setCon(e.target.value)}}/>
                     </div>
                     <div className="statL">
                         <label className="label">Intelegence</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setInt(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setInt(e.target.value)}}/>
                     </div>
                     <div className="clearBoth"/>
                 </div>
                 <div className="fieldWrapper">
                     <div className="statL">
                         <label className="label">Wisdom</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setWis(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setWis(e.target.value)}}/>
                     </div>
                     <div className="statL">
                         <label className="label">Charisma</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setCha(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setCha(e.target.value)}}/>
                     </div>
                 <div className="clearBoth"/>
                 </div>
                 <div className="fieldWrapper">
                     <div className="statL">
                         <label className="label">Armor Class</label>
-                        <input type="number" min="-5" max="20" onChange={(e) => {setAC(e.target.value)}}/>
+                        <input type="number" min="-5" max="20" required onChange={(e) => {setAC(e.target.value)}}/>
                     </div>
                     <div className="statL">
                         <label className="label">THAC0</label>
-                        <input type="number" min="1" max="20" onChange={(e) => {setThac0(e.target.value)}}/>
+                        <input type="number" min="1" max="20" required onChange={(e) => {setThac0(e.target.value)}}/>
                     </div>
                     <div className="clearBoth"/>
                 </div>

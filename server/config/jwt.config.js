@@ -5,7 +5,6 @@ module.exports.authenticate = (req, res, next) => {
         if(err) {
             res.status(401).json({verified: false});
         } else {
-            console.log("VERIFICATION SUCCESSFUL");
             next();
         }
     });

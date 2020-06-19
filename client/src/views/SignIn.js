@@ -41,11 +41,11 @@ const SignIn = props => {
             <form onSubmit={onSubmitHandler} className="signupForm">
                 <div className="field">
                     <label className="label">Username</label>
-                    <input type="text" onChange={(e) => {setUsername(e.target.value)}}/>
+                    <input type="text" required onChange={(e) => {setUsername(e.target.value)}}/>
                 </div>
                 <div className="field">
                     <label className="label">Password</label>
-                    <input type="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                    <input type="password" required onChange={(e) => {setPassword(e.target.value)}}/>
                 </div>
                 {showError()}
                 <input type="submit" value="Sign In"/>

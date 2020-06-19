@@ -29,90 +29,25 @@ const SignUp = props => {
             .catch(err => console.log(err));
     }
 
-    const emailTip = () => {
-        if(errors !== undefined) {
-            if (errors.email !== undefined) {
-                console.log("Email Error");
-                if(errors.email.kind === "required") {
-                    return(
-                        <p className="formError">Email is required</p>
-                    );
-                } else if (errors.email.kind === "unique") {
-                    return(
-                        <p className="formError">This Email has already been registered</p>
-                    )
-                } else if (errors.email.kind === "user defined") {
-                    return(
-                        <p className="formError">Please enter a valid email address</p>
-                    );
-                } else {
-                    return(<div></div>);
-                }
-            }
-        }     
-    }
-
-    const usernameTip = () => {
-        if(errors !== undefined) {
-            if (errors.username !== undefined) {
-            if (errors.username.kind === "required") {
-                return(
-                    <p className="formError">Username is required</p>
-                );
-            } else if (errors.username.kind === "unique") {
-                return(
-                    <p className="formError">Username unavailable</p>
-                );
-            }
-            }
-        }
-    }
-
-    const passwordTip = () => {
-        if(errors !== undefined) {
-            if (errors.password !== undefined) {
-                if (errors.password.kind === "required") {
-                    return(
-                        <p className="formError">A password is required</p>
-                );
-                }
-            }
-        }
-    }
-
-    const confirmPasswordTip= () => {
-        if (errors !== undefined) {
-            if(errors.confirmPassword !== undefined) {
-                return(
-                    <p className="formError">Passwords do not match</p>
-                );
-            }
-        }
-    }
-
     return(
         <div className="body">
             <div className="sectionHeader">Sign Up</div>
             <form onSubmit={onSubmitHandler} className="signupForm">
                 <div className="field">
                     <label className="label">User Name</label>
-                    <input type="text" onChange={(e) => setUsername(e.target.value)}/>
-                    {usernameTip()}
+                    <input type="text" required onChange={(e) => setUsername(e.target.value)}/>
                 </div>
                 <div className="field">
                     <label className="label">E-Mail</label>
-                    <input type="text" onChange={(e) => setEmail(e.target.value)}/>
-                    {emailTip()}
+                    <input type="text" required onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div className="field">
                     <label className="label">Password</label>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)}/>
-                    {passwordTip()}
+                    <input type="password" required onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className="field">
                     <label className="label">Confirm Password</label>
-                    <input type="password" onChange={(e) => setConfirmPassword(e.target.value)}/>
-                    {confirmPasswordTip()}
+                    <input type="password" required onChange={(e) => setConfirmPassword(e.target.value)}/>
                 </div>
                 <input type="submit" value="Sign Up"/>
             </form>
