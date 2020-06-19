@@ -1,0 +1,20 @@
+.edit{
+    width: 75px;
+    background-color: lightsteelblue;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 6px 0 lightslategray;
+    margin: 5px;
+    float: left;
+}
+.delete{
+    width: 75px;
+    background-color: lightcoral;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 6px 0 lightslategray;
+    margin: 5px;
+    float: left;
+}

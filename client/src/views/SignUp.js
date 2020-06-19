@@ -8,7 +8,6 @@ const SignUp = props => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [confirmPassword, setConfirmPassword] = useState();
-    const [errors, setErrors] = useState({});
 
     const onSubmitHandler = e => {
         e.preventDefault();
@@ -21,8 +20,7 @@ const SignUp = props => {
         axios.post('http://localhost:8000/api/users', user)
             .then(res => {
                 console.log(res);
-                setErrors(res.data.errors);
-                if(res.data.msg == "Login success") {
+                if(res.data.msg === "Login success") {
                     navigate("/characters");
                 }
             })

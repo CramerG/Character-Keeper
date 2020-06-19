@@ -20,3 +20,14 @@ module.exports.findByOwner = (req, res) => {
         .then(characters => res.json(characters))
         .catch(err => res.json({error: err}));
 }
+module.exports.findById = (req, res) => {
+    BXCharacter.find({_id: req.params.id})
+        .then(char => res.json({character: char}))
+        .catch(err => res.json({error: err}));
+}
+
+module.exports.updateCharacter = (req, res) => {
+    BXCharacter.findByIdAndUpdate({_id: req.body.id}, req.body.character, {new: true})
+        .then(newCharacter => res.json(newCharacter))
+        .catch(err => res.json({error: err}));
+}

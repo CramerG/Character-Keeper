@@ -8,6 +8,7 @@ import SignIn from './views/SignIn';
 import CharacterAdd from './components/CharacterAdd';
 import Characters from './views/Characters';
 import CharacterList from './components/CharacterList';
+import CharacterEdit from './components/CharacterEdit';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Characters path="/characters">
           <CharacterList path="/"/>
           <CharacterAdd path="/add"/>
+          <CharacterEdit path="/edit/:id"/>
         </Characters>
         
       </Router>

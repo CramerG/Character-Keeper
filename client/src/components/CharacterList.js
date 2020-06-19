@@ -39,7 +39,7 @@ const CharacterList = props => {
                             <div className="infoLine">AC: {char.ac}</div>
                             <div className="infoLine">THAC0: {char.thac0}</div>
                             <div className="clearBoth"/>
-                            <EditButton/>
+                            <EditButton id={char._id}/>
                             <DeleteButton/>
                             <div className="clearBoth"/>
                         </div>
