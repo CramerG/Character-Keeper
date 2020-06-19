@@ -18,7 +18,6 @@ const CharacterAdd = props => {
     const [cha, setCha] = useState();
     const [ac, setAC] = useState();
     const [thac0, setThac0] = useState();
-    const [error, setError] = useState([]);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -41,8 +40,6 @@ const CharacterAdd = props => {
                 console.log(res);
                 if(res.data.error === undefined) {
                     navigate("/characters");
-                } else {
-                    setError(res.data.error.errors);
                 }
 
             })

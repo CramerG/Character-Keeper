@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/character.styles.css';
+import EditButton from './EditButton';
+import DeleteButton from './DeleteButton';
 
 const CharacterList = props => {
     axios.defaults.withCredentials = true;
@@ -36,6 +38,9 @@ const CharacterList = props => {
                             <div className="clearBoth"/>
                             <div className="infoLine">AC: {char.ac}</div>
                             <div className="infoLine">THAC0: {char.thac0}</div>
+                            <div className="clearBoth"/>
+                            <EditButton/>
+                            <DeleteButton/>
                             <div className="clearBoth"/>
                         </div>
                     );
