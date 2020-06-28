@@ -22,6 +22,12 @@ module.exports.findAllUsers = (req, res) => {
         .catch( err => res.json(err));
 };
 
+module.exports.findNameOnly = (req, res) => {
+    User.findOne({_id: req.body.id})
+        .then(user => res.json(user.username))
+        .catch(err => res.json(err));
+}
+
 module.exports.login = async(req, res) => {
     var user;
     try {
