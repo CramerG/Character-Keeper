@@ -9,6 +9,9 @@ import CharacterAdd from './components/CharacterAdd';
 import Characters from './views/Characters';
 import CharacterList from './components/CharacterList';
 import CharacterEdit from './components/CharacterEdit';
+import Groups from './views/Groups';
+import GroupAdd from './components/GroupAdd';
+import GroupList from './components/GroupList';
 
 function App() {
   return (
@@ -23,6 +26,10 @@ function App() {
           <CharacterAdd path="/add"/>
           <CharacterEdit path="/edit/:id"/>
         </Characters>
+        <Groups path="/groups">
+          <GroupList path="/"/>
+          <GroupAdd path="/add"/>
+        </Groups> 
         
       </Router>
     </div>

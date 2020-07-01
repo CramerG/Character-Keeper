@@ -10,7 +10,7 @@ const Navbar = props => {
             <div className="title" onClick={() => {navigate("/")}}>Character Keeper</div>
             <div className="links">
                 <Link to="/characters/" className="linkText">Characters</Link>
-                <Link to="" className="linkText">Groups</Link>
+                <Link to="/groups/" className="linkText">Groups</Link>
                 <UserNav/>
                 <div className="clearboth"></div>
             </div>
